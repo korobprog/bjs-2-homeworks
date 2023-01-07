@@ -16,8 +16,8 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   if (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) {
     return false;
   } else {
-    let monthRate = percent / 100 / 12;  // месячная ставка
-    let bodyOfTheLoan = amount - contribution; //тело кредита
+    let monthRate = percent / 100 / 12;  // месячная ставка банка
+    let bodyOfTheLoan = amount - contribution; //тело кредита банка
     let monthPayment = bodyOfTheLoan * (monthRate + (monthRate / (Math.pow(1 + monthRate, countMonths) - 1)));
     let totalCount = monthPayment * countMonths;  
     return parseFloat(totalCount.toFixed(2));
